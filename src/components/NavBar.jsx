@@ -6,10 +6,19 @@ import {ReactComponent as PersonOutlineIcon} from '../assets/svg/personOutlineIc
 function Navbar() {
 	return (
 		<footer className="navbar">
-			<nav className="navbarBav">
+			<nav className="navbarNav">
 				<ul className="navbarListItems">
 					<li className="navbarListItems">
-						
+						<ExploreIcon fill="#2c2c2c" width="36px" height="36px"/>
+						<p>Explore</p>
+					</li>
+					<li className="navbarListItems">
+						<OfferIcon fill="#2c2c2c" width="36px" height="36px"/>
+						<p>Offer</p>
+					</li>
+					<li className="navbarListItems">
+						<PersonOutlineIcon fill="#2c2c2c" width="36px" height="36px"/>
+						<p>Profile</p>
 					</li>
 				</ul>
 			</nav>
