@@ -1,14 +1,16 @@
-import {Link} 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {ReactComponent as DeleteIcon} from '../assets/svg/deleteIcon.svg'
 import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 
-function ListingItem() {
+function ListingItem({ listing, id }) {
   return (
-    <div>
-     <h1>ListingItem</h1>
-    </div>
-  );
+    <li className="categoryListing">
+      <Link to={`/category/${listing.type}/${id}`} className="categoryListingLink">
+        <img src={listing.imageUrls[0]} alt={listing.name} className="categoryListingImg" />
+      </Link>
+    </li>
+  )
 }
 
 export default ListingItem
