@@ -45,11 +45,38 @@ function CreateListing() {
 		}
 	}, [isMounted])
 
-	const onSubmit = e => {
+	const onSubmit = (e) => {
 		e.preventDefault();
 	}
 
-	const onMutate = e => {}
+	const onMutate = (e) => {
+		// setting boolean strings to actual boolean
+		let boolean = null
+		if(e.target.value === 'true') {
+			boolean = true
+		}	
+		if(e.target.value === 'false') {
+			boolean = false
+		}
+
+		// files
+		if(e.target.files) {
+			setFormData((prevState) => ({
+				...prevState,
+				images: e.target.files
+			}))
+		}
+
+		// NOT files, aka text/booleans/numbers
+		if(!e.target.files) {
+			setFormData((prevState) => ({
+				...prevState,
+				[e.target.id]: boolean ?? e.target.value
+			}))
+		}
+
+
+	}
 
 	if(loading) {
 		return <Spinner />
