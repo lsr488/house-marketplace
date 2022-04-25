@@ -124,84 +124,86 @@ function CreateListing() {
 						required
 					/>
 
-					<div className="formRooms flex">
-						<div>
-							<label className="formLabel">Bedrooms</label>
-							<input
-								className="formInputSmall"
-								type="number"
-								id="bedrooms"
-								value={bedrooms}
-								onChange={onMutate}
-								max="50"
-								min="1"
-								required
-							/>
-						</div>
-						<div>
-							<label className="formLabel">Bathrooms</label>
-							<input
-								className="formInputSmall"
-								type="number"
-								id="bathrooms"
-								value={bathrooms}
-								onChange={onMutate}
-								max="50"
-								min="1"
-								required
-							/>
-						</div>
-					</div>
+					<div className='formRooms flex'>
+            <div>
+              <label className='formLabel'>Bedrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bedrooms'
+                value={bedrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
+            <div>
+              <label className='formLabel'>Bathrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bathrooms'
+                value={bathrooms}
+                onChange={onMutate}
+                min='1'
+                max='50'
+                required
+              />
+            </div>
+          </div>
 
-					<label className="formLabel">Parking Spot</label>
-					<div className="formButtons">
-						<button
-							type="button"
-							className={type === 'parking' ? 'formButtonActive' : 'formButton'}
-							id="parking"
-							value={true}
-							onClick={onMutate}
-							min="1"
-							max="50"
-						>
-							Yes
-						</button>
+					<label className='formLabel'>Parking spot</label>
+          <div className='formButtons'>
+            <button
+              className={parking ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='parking'
+              value={true}
+              onClick={onMutate}
+              min='1'
+              max='50'
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !parking && parking !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='parking'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
 
-						<button
-							type="button"
-							className={!parking && parking !== null ? 'formButtonActive' : 'formButton'}
-							id="parking"
-							value={false}
-							onClick={onMutate}
-						>
-							No
-						</button>
-					</div>
-
-					<label className="formLabel">Furnished</label>
-					<div className="formButtons">
-						<button
-							type="button"
-							className={type === 'furnished' ? 'formButtonActive' : 'formButton'}
-							id="furnished"
-							value={true}
-							onClick={onMutate}
-							min="1"
-							max="50"
-						>
-							Yes
-						</button>
-
-						<button
-							type="button"
-							className={!furnished && furnished !== null ? 'formButtonActive' : 'formButton'}
-							id="furnished"
-							value={false}
-							onClick={onMutate}
-						>
-							No
-						</button>
-					</div>
+          <label className='formLabel'>Furnished</label>
+          <div className='formButtons'>
+            <button
+              className={furnished ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='furnished'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !furnished && furnished !== null
+                  ? 'formButtonActive'
+                  : 'formButton'
+              }
+              type='button'
+              id='furnished'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
 
 					<label className="formLabel">Address</label>
 					<textarea
