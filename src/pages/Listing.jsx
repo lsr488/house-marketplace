@@ -44,7 +44,8 @@ function Listing() {
 				slidesPerView={1}
 				pagination={{clickable: true}}
 				navigation
-				style={{height: '300px'}}
+				className="swiper-container"
+
 			>
 			{listing.imgUrls.map((url, index) => (
 				<SwiperSlide key={index}>
