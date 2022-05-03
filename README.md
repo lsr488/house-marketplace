@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Visit completed project at https://house-marketplace-weld-phi.vercel.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
